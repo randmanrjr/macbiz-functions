@@ -6,10 +6,10 @@
  * Time: 8:23 AM
  */
 
-add_action('customize_register','mayo_theme_customizer');
+add_action('customize_register','macbiz_theme_customizer');
 
-if (! function_exists( 'mayo_theme_customizer' ) ):
-    function mayo_theme_customizer( $wp_customize ) {
+if (! function_exists( 'macbiz_theme_customizer' ) ):
+    function macbiz_theme_customizer( $wp_customize ) {
 
 	    $current_theme = wp_get_theme();
 	    if ($current_theme->exists()) {
@@ -21,7 +21,7 @@ if (! function_exists( 'mayo_theme_customizer' ) ):
         //Create custom section for logo upload
         $wp_customize->add_section( 'main_site_logo', array(
                 'priority'          => 1000,
-                'panel'             => 'mayo_foundationpress_options',
+                'panel'             => 'macbiz_foundationpress_options',
                 'title'             => __( 'Site logo', $text_domain ),
                 'description'       => __( 'Upload the site logo', $text_domain )
             )
@@ -42,7 +42,7 @@ if (! function_exists( 'mayo_theme_customizer' ) ):
         //Create custom section for site background image
         $wp_customize->add_section('site_background_image', array(
                 'priority'          => 1001,
-                'panel'             => 'mayo_foundationpress_options',
+                'panel'             => 'macbiz_foundationpress_options',
                 'title'             => __('Site Background', $text_domain),
                 'description'       => __('Upload a background image for the site', $text_domain)
             )
@@ -60,17 +60,17 @@ if (! function_exists( 'mayo_theme_customizer' ) ):
             )
         );
 
-        //create panel for Mayo Foundationpress
-        $wp_customize->add_panel('mayo_foundationpress_options', array(
+        //create panel for Macbiz Foundationpress
+        $wp_customize->add_panel('macbiz_foundationpress_options', array(
             'priority'          => 2002,
-            'title'             => __('Mayo Designs Theme Options', $text_domain),
-            'description'       => __('Options for Mayo Designs', $text_domain)
+            'title'             => __('MacBiz Theme Options', $text_domain),
+            'description'       => __('Options for MacBiz', $text_domain)
         ));
 
 	    //Create Custom section for theme colors
 	    $wp_customize->add_section('theme_colors', array(
 		    'priority'          => 1002,
-		    'panel'             => 'mayo_foundationpress_options',
+		    'panel'             => 'macbiz_foundationpress_options',
 		    'title'             => __('Theme Colors', $text_domain),
 		    'description'       => __('Primary and Secondary colors', $text_domain)
 	    ));
@@ -78,7 +78,7 @@ if (! function_exists( 'mayo_theme_customizer' ) ):
 	    //Create Custom section for Social Media Accounts
 	    $wp_customize->add_section('social_media', array(
 		    'priority'          => 1003,
-		    'panel'             => 'mayo_foundationpress_options',
+		    'panel'             => 'macbiz_foundationpress_options',
 		    'title'             => __('Social Media', $text_domain),
 		    'description'       => __('Social Media Accounts', $text_domain)
 	    ));
@@ -86,7 +86,7 @@ if (! function_exists( 'mayo_theme_customizer' ) ):
         //Create Custom section for Company Information
         $wp_customize->add_section('company_info', array(
             'priority'          => 1004,
-            'panel'             => 'mayo_foundationpress_options',
+            'panel'             => 'macbiz_foundationpress_options',
             'title'             => __('Company Information', $text_domain),
             'description'       => __('Edit Company Information', $text_domain)
         ));
@@ -94,7 +94,7 @@ if (! function_exists( 'mayo_theme_customizer' ) ):
         //Create Custom section for Company Information
         $wp_customize->add_section('company_address', array(
             'priority'          => 1005,
-            'panel'             => 'mayo_foundationpress_options',
+            'panel'             => 'macbiz_foundationpress_options',
             'title'             => __('Company Address', $text_domain),
             'description'       => __('Edit Company Address', $text_domain)
         ));
@@ -102,7 +102,7 @@ if (! function_exists( 'mayo_theme_customizer' ) ):
         //Create Custom section for Company Information
         $wp_customize->add_section('mailing_address', array(
             'priority'          => 1006,
-            'panel'             => 'mayo_foundationpress_options',
+            'panel'             => 'macbiz_foundationpress_options',
             'title'             => __('Mailing Address', $text_domain),
             'description'       => __('Edit Mailing Address', $text_domain)
         ));
@@ -178,43 +178,43 @@ if (! function_exists( 'mayo_theme_customizer' ) ):
         ));
 
 		//social media controls
-	    $wp_customize->add_control(new MAYO_Social_Media_Customize_Control($wp_customize, 'social_facebook', array(
+	    $wp_customize->add_control(new MACBIZ_Social_Media_Customize_Control($wp_customize, 'social_facebook', array(
 		    'label'             => __('Facebook', $text_domain),
 		    'section'           => 'social_media',
 		    'settings'          => 'social_facebook',
             'fa_string'         => 'fa fa-facebook-square'
 	    )));
-	    $wp_customize->add_control(new MAYO_Social_Media_Customize_Control($wp_customize, 'social_instagram', array(
+	    $wp_customize->add_control(new MACBIZ_Social_Media_Customize_Control($wp_customize, 'social_instagram', array(
 		    'label'             => __('Instagram', $text_domain),
 		    'section'           => 'social_media',
 		    'settings'          => 'social_instagram',
 		    'fa_string'         => 'fa fa-instagram'
 	    )));
-	    $wp_customize->add_control(new MAYO_Social_Media_Customize_Control($wp_customize, 'social_twitter', array(
+	    $wp_customize->add_control(new MACBIZ_Social_Media_Customize_Control($wp_customize, 'social_twitter', array(
 		    'label'             => __('Twitter', $text_domain),
 		    'section'           => 'social_media',
 		    'settings'          => 'social_twitter',
             'fa_string'         => 'fa fa-twitter-square'
 	    )));
-	    $wp_customize->add_control(new MAYO_Social_Media_Customize_Control($wp_customize, 'social_linkedin', array(
+	    $wp_customize->add_control(new MACBIZ_Social_Media_Customize_Control($wp_customize, 'social_linkedin', array(
 		    'label'             => __('Linkedin', $text_domain),
 		    'section'           => 'social_media',
 		    'settings'          => 'social_linkedin',
             'fa_string'         => 'fa fa-linkedin-square'
 	    )));
-        $wp_customize->add_control(new MAYO_Social_Media_Customize_Control($wp_customize, 'social_google_plus', array(
+        $wp_customize->add_control(new MACBIZ_Social_Media_Customize_Control($wp_customize, 'social_google_plus', array(
             'label'             => __('Google', $text_domain),
             'section'           => 'social_media',
             'settings'          => 'social_google_plus',
             'fa_string'         => 'fa fa-google'
         )));
-        $wp_customize->add_control(new MAYO_Social_Media_Customize_Control($wp_customize, 'social_pinterest', array(
+        $wp_customize->add_control(new MACBIZ_Social_Media_Customize_Control($wp_customize, 'social_pinterest', array(
             'label'             => __('Pinterest', $text_domain),
             'section'           => 'social_media',
             'settings'          => 'social_pinterest',
             'fa_string'         => 'fa fa-pinterest-square'
         )));
-        $wp_customize->add_control(new MAYO_Social_Media_Customize_Control($wp_customize, 'social_youtube', array(
+        $wp_customize->add_control(new MACBIZ_Social_Media_Customize_Control($wp_customize, 'social_youtube', array(
             'label'             => __('Youtube', $text_domain),
             'section'           => 'social_media',
             'settings'          => 'social_youtube',
