@@ -1,6 +1,6 @@
 {
   "name": "macbiz-functions",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Core Wordpress Functions for MacBiz Consulting Themes",
   "main": "macbiz-functions.php",
   "scripts": {
