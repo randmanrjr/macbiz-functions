@@ -1,4 +1,4 @@
-# MavBiz Functions #
+# MacBiz Functions #
 
 ## What is this repository for? ##
 
